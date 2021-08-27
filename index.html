@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        body{
+            background-color: tomato;
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            text-align: center;
+        }
+        .container h1{
+            color:#fff;
+            margin-top: 4em;
+
+        }
+        .container h4 > i{
+            color: #000;
+            font-size:1.7em;
+            padding: .2em 1.3em;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        #content{
+            display: none;
+            text-align: center;
+        }
+        #content ul{
+            padding: 0;
+            margin: 0;
+            background-color: #fff;
+            display: inline-block;
+            padding: .4em 1.4em;
+            
+            
+        }
+        #content ul li{
+            padding: .5em 1em;
+            list-style: none;
+            cursor: pointer;
+
+        }
+        #content ul li:hover{
+            opacity: .5;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <h1>Drop Down</h1>
+        <hr>
+        <br>
+        <h4 id= 'btn'><i class="bi bi-chevron-compact-down"></i></h4>
+    </section>
+    <section id="content">
+        <ul>
+            <li>Home</li>
+            <li>Profile</li>
+            <li>Contact</li>
+            <li>About</li>
+            <li>Feedback</li>
+        </ul>
+
+    </section>
+    <!-- Script -->
+    <script>
+        const btn = document.getElementById('btn')
+        const content = document.getElementById('content')
+
+        let open = 'a';
+        let close = '';
+
+        btn.addEventListener('click', ()=>{
+            if(open =='a'){
+                 content.style.display = 'block';
+                 btn.style.transform = 'rotate(180deg)'
+                 open = '';
+                 close = 'b';
+            }else if(close == 'b'){
+                content.style.display = 'none';
+                btn.style.transform = 'rotate(0deg)'
+                close = '';
+                open = 'a';
+            }
+        })
+    </script>
+</body>
+</html>
